@@ -9,7 +9,7 @@
 		"lint": "prettier-standard './**/*.js'",
 		"dev": "NODE_ENV=development nodemon app.js",
 		"recreate-db:prod": "NODE_ENV=production node ./db/seed-db.js",
-		"recreate-db:local": "psql -U postgres -f ./db/set-up-local-db.sql && node ./db/seed-db.js"
+		"recreate-db:local": "psql -U postgres -f ./db/setup-local-db.sql && node ./db/seed-db.js"
 	},
 	"author": "",
 	"license": "ISC",
