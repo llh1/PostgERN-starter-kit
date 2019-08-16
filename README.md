@@ -44,7 +44,7 @@ The project is divided into `client` folder for the React frontend, and a `serve
 
 The client is a React app created with [create-react-app](https://create-react-app.dev/). In addition to the default setup, we have added [React Router](https://reacttraining.com/react-router/) with 3 routes for testing
 
-- The `components` live in the `components` folder. Some project structures differentiate between `containers` (smart components with state, typically implemented as a class) and `components` (dumb components without state, typically implemented as a function). We will have everything under components. When the project gets bigger, we might separate them into logical folders (i.e. `components/admin` for admin-related components, and `components/profile` for user profile-related components)
+- The `components` live in the `components` folder. When the project gets bigger, we might separate them into logical folders (i.e. `components/admin` for admin-related components, and `components/profile` for user profile-related components)
 
 - The `api` folder contains modules to call a specific API, i.e. when you add a new endpoint to list, craete and update _jobs_ then you can add a new module called `api/jobs.js` that can contain methods such as `getJobs, createJob, deleteJob ...`.
 
