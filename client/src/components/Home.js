@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/App.css';
+import '../styles/Home.css';
 
-const App = () => {
+const Home = () => {
   return (
     <div>
-      <header className="app-header">
+      <header className="home-header">
         <h1>
           Graduation Project skeleton
         </h1>
@@ -13,4 +13,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;
