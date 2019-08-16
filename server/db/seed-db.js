@@ -11,8 +11,10 @@ const populateDb = fs
 const pool = new Pool(config);
 
 queryDb(createSchema)
-	.then(() => queryDb(populateDb))
-	.then(() => process.exit(0));
+  .then(() => console.log('schema created successfully'))
+  .then(() => queryDb(populateDb))
+  .then(() => console.log('data populated successfully'))
+  .then(() => process.exit(0));
 
 function queryDb(query) {
 	return new Promise((resolve, error) => {

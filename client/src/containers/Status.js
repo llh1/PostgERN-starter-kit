@@ -1,19 +1,18 @@
 import React from "react";
-import { getStatus, getHotels } from "../api/status";
+import { getStatus, getUsers } from "../api/status";
 
 class Status extends React.Component {
   state = {
     status: null,
-    hotels: []
+    users: []
   };
 
   componentDidMount() {
     getStatus().then(response => {
       this.setState({ status: response });
     });
-
-    getHotels().then(response => {
-      this.setState({ hotels: response });
+    getUsers().then(response => {
+      this.setState({ users: response });
     });
   }
 
@@ -21,19 +20,20 @@ class Status extends React.Component {
     return (
       <div>
         <header className="app-header">
+
+          <label>Database health check (querying users in DB):</label>
+          {!this.state.users.length ? <p>No users</p> : <ul>
+            {this.state.users.map(user => (
+              <li key={user.id}>user: {user.email}</li>
+            ))}
+          </ul>}
           <h6>
-            API Status:{" "}
+            API health check:{" "}
             {!this.state.status
               ? "No Status received from server"
               : this.state.status}
           </h6>
         </header>
-        Hotels:
-        <ul>
-          {this.state.hotels.map(hotel => (
-            <li key={hotel.id}>hotel: {hotel.name}</li>
-          ))}
-        </ul>
       </div>
     );
   }
