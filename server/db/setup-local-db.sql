@@ -1,1 +1,0 @@
-CREATE DATABASE cyf_test OWNER postgres;
