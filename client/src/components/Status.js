@@ -20,13 +20,16 @@ class Status extends React.Component {
     return (
       <div>
         <header className="app-header">
-
           <label>Database health check (querying users in DB):</label>
-          {!this.state.users.length ? <p>No users</p> : <ul>
-            {this.state.users.map(user => (
-              <li key={user.id}>user: {user.email}</li>
-            ))}
-          </ul>}
+          {!this.state.users.length ? (
+            <p>No users</p>
+          ) : (
+            <ul>
+              {this.state.users.map(user => (
+                <li key={user.id}>user: {user.email}</li>
+              ))}
+            </ul>
+          )}
           <h6>
             API health check:{" "}
             {!this.state.status
