@@ -12,8 +12,10 @@ Your team will want their own DB name, tables and data. So one team member needs
 - commit and push above changes.
 - Let your team members pull the changes.
 
-Once the other team members do the above you'll need to:
-- `cd` into `server` and `npm run recreate-db:local` (this will create and populate your new team's DB with the data your colleague added)
+Everyone will need to initialize their database locally with the following:
+- `cd` into `server`
+- Create your database: `createdb cyf_test` (replace `cyf_test` with the name of your database)
+- `npm run recreate-db:local` (this will create and populate your new team's DB with the data your colleague added)
 
 > Your actual database schema will go to `server/db/recreate-schema.sql` and you can add sample test data in  `server/db/populate-db.sql`
 
